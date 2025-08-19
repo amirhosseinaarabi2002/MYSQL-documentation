@@ -1,10 +1,11 @@
 const mysql = require("mysql");
 
 const adminDB = mysql.createConnection({
-  host: "localhost",
+  host: "api-users-db",
   user: "root",
-  password: "",
-  database: "pannel_admin",
+  password: "btOFqkPFuYJI4kWteCUt4ie3",
+  database: "jovial_lamarr",
+  port: 3306,
 });
 
 module.exports = adminDB;

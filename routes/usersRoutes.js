@@ -11,12 +11,18 @@ usersRoutes.post("/", (req, res) => {
       console.log(err);
     } else {
       console.log("connected");
-      let newUser = `INSERT INTO users VALUES (NULL,${body.firstname},${body.lastname},${body.username},${body.password},${date})`;
+      let newUser = `INSERT INTO users VALUES (NULL,"${body.firstname}","${body.lastname}","${body.username}","${body.password}","${date}")`;
       adminDB.query(newUser, (err, result) => {
         if (err) {
           console.log(err);
+          res.status(422).json({
+            message: "user not valid"
+          })
         } else {
           console.log("user added");
+          res.json({
+            message: "user added successfully"
+          })
         }
       });
     }

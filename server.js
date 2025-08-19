@@ -1,10 +1,10 @@
 const express = require("express");
 const cors = require("cors");
 
-const adminDB = require("./db/adminDB");
+require("./db/adminDB");
 const usersRoutes = require("./routes/usersRoutes");
 
-const port = 4000;
+const port = 3000;
 
 const app = express();
 app.use(cors())
